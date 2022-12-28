@@ -1342,8 +1342,10 @@ Blockly.Msg["UART_BAUDRATE_SHOW"] = "Baud Rate";
 Blockly.Msg["UART_GETDATA_SHOW"] = "get string";
 Blockly.Msg["UART_READ_ALL_SHOW"] = "Read complete string";
 Blockly.Msg["UART_READ_STRING_SHOW"] = "Read a part of string";
-Blockly.Msg["UART_READ_ROW_SHOW"] = "Read string until newline";
 Blockly.Msg["UART_READ_CHAR_SHOW"] = "Read a Character";
+Blockly.Msg["UART_READ_NEWLINE_SHOW"] = "Read string until newline character";
+Blockly.Msg["UART_READ_RETURN_SHOW"] = "Read string until return character";
+Blockly.Msg["UART_READ_CUSTOM_SHOW"] = "Read string until a custom character";
 
 Blockly.Msg["DFPLAYER_INITIAL_SHOW"] = "DFPlayer Mini set";
 Blockly.Msg["DFPLAYER_COMMAND_SHOW"] = "DFPlayer command";
@@ -1875,11 +1877,48 @@ Blockly.Msg["PREFERENCES_READ"] = "read string";
 Blockly.Msg["PREFERENCES_CLEAR_NAMESPACE"] = "clear";
 Blockly.Msg["PREFERENCES_REMOVE_KEY"] = "remove";
 
-Blockly.Msg["TASKHANDLE_PICO_SHOW"] = "PICO dual-core";
+Blockly.Msg["TASKHANDLE_PICO_SHOW"] = "Pico W dual-core";
 Blockly.Msg["TASKHANDLE_SETUP1_SHOW"] = "setup1";
 Blockly.Msg["TASKHANDLE_LOOP1_SHOW"] = "loop1";
 
-Blockly.Msg["PN532_INITIAL_SHOW"] = "PN532 (NFC) Initial";
-Blockly.Msg["PN532_READ_SHOW"] = "PN532 (NFC) Read UID string";
+Blockly.Msg["PN532_INITIAL_SHOW"] = "PN532 (RFID) I2C Initial";
+Blockly.Msg["PN532_READ_SHOW"] = "PN532 (RFID) Read UID string";
 Blockly.Msg["PN52_PIN_DEFAULT"] = "default pins";		
 Blockly.Msg["PN52_PIN_CUSTOM"] = "custom pins";
+
+Blockly.Msg["FU_SERVO_INDEX"] = "index";
+Blockly.Msg["FU_SERVO_DEFAULT"] = "default";
+Blockly.Msg["FU_SERVO_CUSTOM"] = "custom";
+Blockly.Msg["FU_SERVO_MIN_PULSEWIDTH"] = "min pulse width";
+Blockly.Msg["FU_SERVO_MAX_PULSEWIDTH"] = "max pulse width";
+
+Blockly.Msg["ADXL345"] = "ADXL345 3-axis accelerometer (I2C)";
+Blockly.Msg["ADXL345_GETDATA"] = "get acceleration (m/s^2)";
+Blockly.Msg["ADXL345_GET"] = "axis acceleration";
+
+Blockly.Msg.OPENAI_TEXT_SHOW = "openAI Chat";
+Blockly.Msg.OPENAI_TEXT_INITIAL_SHOW = "Initial";
+Blockly.Msg.OPENAI_TEXT_TOKEN_SHOW = "API Token";
+Blockly.Msg.OPENAI_TEXT_TOKENS_SHOW = "Max tokens";
+Blockly.Msg.OPENAI_TEXT_REQUEST_SHOW = "Request content";
+Blockly.Msg.OPENAI_TEXT_RESPONSE_SHOW = "After getting response";
+Blockly.Msg.OPENAI_TEXT_RESPONSE_GET_SHOW = "Response";
+Blockly.Msg.OPENAI_TEXT_RESPONSE_GET_BR_SHOW = "new line";
+Blockly.Msg.OPENAI_TEXT_RESPONSE_CLEAR_SHOW = "Clear response";
+
+Blockly.Msg["GY30_GETDATA_SHOW"] = "GY-30 Light intensity sensor read data(lx)";
+
+Blockly.Msg["ESP32_BLEKEYBOARD_SHOW"] = "ESP32 BLE Keyboard get data once from serial";
+Blockly.Msg["ESP32_BLEKEYBOARD_INITIAL_SHOW"] = "initial";
+Blockly.Msg["ESP32_BLEKEYBOARD_AFTER_READ_SHOW"] = "after reading data once";
+Blockly.Msg["ESP32_BLEKEYBOARD_PRESS_SHOW"] = "ESP32 BLE Keyboard press";
+Blockly.Msg["ESP32_BLEKEYBOARD_KEYCODE_SHOW"] = "keycode";
+Blockly.Msg["ESP32_BLEKEYBOARD_PRESSTIME_SHOW"] = "preess time(ms)";			
+Blockly.Msg["ESP32_BLEKEYBOARD_PRINT_SHOW"] = "ESP32 BLE Keyboard print";		
+Blockly.Msg["ESP32_BLEKEYBOARD_CHARACTERS_SHOW"] = "String";		
+Blockly.Msg["ESP32_BLEKEYBOARD_WRITE_SHOW"] = "ESP32 BLE Keyboard write";
+Blockly.Msg["ESP32_BLEKEYBOARD_ASCII_SHOW"] = "ASCII code";
+Blockly.Msg["ESP32_BLEKEYBOARD_CHARACTER_SHOW"] = "Character";
+Blockly.Msg["ESP32_BLEKEYBOARD_TRANSFER_ASCII_SHOW"] = "transfer ASCII code to";
+Blockly.Msg["ESP32_BLEKEYBOARD_INTEGER_SHOW"] = "integer";		
+Blockly.Msg["ESP32_BLEKEYBOARD_STRING_SHOW"] = "string";

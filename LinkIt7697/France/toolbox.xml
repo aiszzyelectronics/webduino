@@ -111,7 +111,7 @@
 		  <block type="math_number">
 			<field name="NUM">17</field>
 		  </block>
-		</value> 		  
+		</value>		
 	  </block>		
 		<block type="fu_serial_ready"></block>
 		<block type="fu_serial_end"></block>
@@ -162,6 +162,11 @@
 		  </block>
 		</value> 		  
 		<field name="baudrate">9600</field>
+		<value name="custom">
+			<shadow type="text">
+				<field name="TEXT">\r</field>
+			</shadow>
+		</value>		
 		<statement name="statement"></statement>
 	  </block>
 	  <block type="uart_getdata"></block>
@@ -983,7 +988,7 @@
 			<field name="baudrate">9600</field>
 			<value name="blename">
 			  <block type="text" id="234">
-				<field name="TEXT">ESp32 BLE</field>
+				<field name="TEXT">ESP32 BLE</field>
 			  </block>
 			</value>
 			<statement name="ExecuteCommand">
@@ -1079,7 +1084,7 @@
 			<field name="baudrate">9600</field>
 			<value name="blename">
 			  <block type="text" id="6">
-				<field name="TEXT">ESp32 BLE</field>
+				<field name="TEXT">ESP32 BLE</field>
 			  </block>
 			</value>
 		  </block>
@@ -1123,8 +1128,57 @@
 			</block>
 			<block type="esp32_webbluetooth_get"> 
 			</block>			
-		</category>		
+		</category>
 
+		<category id="france7" name="blekeyboardmodule">
+		  <block type="esp32_blekeyboard">
+			<value name="blename">
+			  <block type="text">
+				<field name="TEXT">ESP32 BLE Keyboard</field>
+			  </block>
+			</value>
+		  </block>
+		  <block type="esp32_blekeyboard_press">
+			<value name="keycode1">
+			  <block type="esp32_blekeyboard_keycode">
+				<field name="keycode">0</field>
+			  </block>
+			</value>
+			<value name="keycode2">
+			</value>
+			<value name="keycode3">
+			</value>
+			<value name="presstime">
+			  <block type="math_number">
+				<field name="NUM">10</field>
+			  </block>
+			</value>			
+		  </block>
+		  <block type="esp32_blekeyboard_print">
+			<value name="characters">
+			  <block type="text">
+				<field name="TEXT">Hello World</field>
+			  </block>
+			</value>			
+		  </block>
+		  <block type="esp32_blekeyboard_write">
+			<value name="keycode">
+			  <block type="esp32_blekeyboard_keycode">
+				<field name="keycode">0</field>
+			  </block>
+			</value>			
+		  </block>
+		  <block type="esp32_blekeyboard_keycode">			
+		  </block>
+		  <block type="esp32_blekeyboard_chartoascii">
+			<value name="character">
+			  <block type="text_quotationmark">
+				<field name="TEXT">A</field>
+			  </block>
+			</value>		  
+		  </block>		  
+		</category>
+		
 		<category id="france20" name="telegrambot"> 
 		  <block type="esp32_telegrambot" id=":25@@FE6iA8FfSA8:XB-" x="250" y="30">
 			<field name="baudrate">115200</field>
@@ -7542,30 +7596,6 @@
 						<field name="NUM">500</field>
 					</block>
 				</value>
-			</block>
-			<block type="esp32_buzzer2">
-				<value name="pin">
-					<block type="math_number">
-						<field name="NUM">25</field>
-					</block>
-				</value>
-				<value name="delaytime">
-					<block type="math_number">
-						<field name="NUM">500</field>
-					</block>
-				</value>
-			</block>
-			<block type="esp32_buzzer3">
-				<value name="pin">
-					<block type="math_number">
-						<field name="NUM">25</field>
-					</block>
-				</value>
-				<value name="delaytime">
-					<block type="math_number">
-						<field name="NUM">500</field>
-					</block>
-				</value>
 			</block>			
 			<block type="esp32_buzzer1">
 				<value name="pin">
@@ -7584,6 +7614,8 @@
 					</block>
 				</value>
 			</block>
+			<block type="esp32_buzzer_tone1">
+			</block>			
 			<block type="esp32_buzzer1">
 				<value name="pin">
 					<block type="math_number">
@@ -7621,12 +7653,43 @@
 				  </block>
 				</value>
 			</block>
-			<block type="esp32_buzzer_tone1">
-			</block>	
-			<block type="esp32_buzzer_tone2">
-			</block>	
-			<block type="esp32_buzzer_tone3">
-			</block>			
+			<block type="esp32_buzzer1">
+				<value name="pin">
+					<block type="math_number">
+						<field name="NUM">25</field>
+					</block>
+				</value>
+				<value name="frequency">
+				  <block type="array_create_with" id="105" inline="false">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+					  <block type="text" id="117">
+						<field name="TEXT">392,330</field>
+					  </block>
+					</value>
+					<value name="ADD1">
+					  <block type="text" id="118">
+						<field name="TEXT">330,392</field>
+					  </block>
+					</value>
+				  </block>
+				</value>
+				<value name="delaytime">
+				  <block type="array_create_with" id="119" inline="false">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+					  <block type="text" id="120">
+						<field name="TEXT">1000,500</field>
+					  </block>
+					</value>
+					<value name="ADD1">
+					  <block type="text" id="121">
+						<field name="TEXT">500,1000</field>
+					  </block>
+					</value>
+				  </block>
+				</value>
+			</block>							
 			<block type="esp32_mpu9250_pin">
 				<value name="sda">
 					<block type="math_number">
@@ -9209,30 +9272,6 @@
 						<field name="NUM">500</field>
 					</block>
 			</value>
-		</block>
-		<block type="esp32_buzzer2">
-			<value name="pin">
-				<block type="math_number">
-					<field name="NUM">25</field>
-				</block>
-			</value>
-			<value name="delaytime">
-					<block type="math_number">
-						<field name="NUM">500</field>
-					</block>
-			</value>
-		</block>
-		<block type="esp32_buzzer3">
-			<value name="pin">
-				<block type="math_number">
-					<field name="NUM">25</field>
-				</block>
-			</value>
-			<value name="delaytime">
-					<block type="math_number">
-						<field name="NUM">500</field>
-					</block>
-			</value>
 		</block>			
 		<block type="esp32_buzzer1">
 			<value name="pin">
@@ -9251,6 +9290,8 @@
 					</block>
 			</value>
 		</block>
+		<block type="esp32_buzzer_tone1">
+		</block>		
 		<block type="esp32_buzzer1">
 			<value name="pin">
 				<block type="math_number">
@@ -9288,12 +9329,43 @@
 			  </block>
 			</value>
 		</block>
-		<block type="esp32_buzzer_tone1">
-		</block>	
-		<block type="esp32_buzzer_tone2">
-		</block>	
-		<block type="esp32_buzzer_tone3">
-		</block>			
+			<block type="esp32_buzzer1">
+				<value name="pin">
+					<block type="math_number">
+						<field name="NUM">25</field>
+					</block>
+				</value>
+				<value name="frequency">
+				  <block type="array_create_with" id="105" inline="false">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+					  <block type="text" id="117">
+						<field name="TEXT">392,330</field>
+					  </block>
+					</value>
+					<value name="ADD1">
+					  <block type="text" id="118">
+						<field name="TEXT">330,392</field>
+					  </block>
+					</value>
+				  </block>
+				</value>
+				<value name="delaytime">
+				  <block type="array_create_with" id="119" inline="false">
+					<mutation items="2"></mutation>
+					<value name="ADD0">
+					  <block type="text" id="120">
+						<field name="TEXT">1000,500</field>
+					  </block>
+					</value>
+					<value name="ADD1">
+					  <block type="text" id="121">
+						<field name="TEXT">500,1000</field>
+					  </block>
+					</value>
+				  </block>
+				</value>
+			</block>					
 	</category>
 	<category id="france9" name="DHT11">
 	  <block type="dht11_pin">
@@ -9309,34 +9381,29 @@
 	  </block>	 
 	</category>	
 	<category id="france9" name="servoesp">
-		<block type="fu_servo">
+		<block type="fu_servo_initial">
 			<value name="pin">
 			  <block type="math_number">
 				<field name="NUM">2</field>
 			  </block>
 			</value>
+			<value name="min">
+			  <block type="math_number">
+				<field name="NUM">400</field>
+			  </block>
+			</value>
+			<value name="max">
+			  <block type="math_number">
+				<field name="NUM">2600</field>
+			  </block>
+			</value>			
+		</block>
+		<block type="fu_servo_angle">
 			<value name="angle">
 			  <block type="math_number">
 				<field name="NUM">90</field>
 			  </block>
 			</value>		
-		</block>	
-		<block type="fu_servo_esp">
-			<value name="pin">
-			  <block type="math_number">
-				<field name="NUM">17</field>
-			  </block>
-			</value>
-			<value name="angle">
-			  <block type="math_number">
-				<field name="NUM">90</field>
-			  </block>
-			</value>
-			<value name="channel">
-			  <shadow type="math_number">
-			  <field name="NUM">9</field>
-			</shadow>
-		  </value>			
 		</block>
 	</category>
 	<category id="france9" name="ws2816">
@@ -9742,9 +9809,21 @@
 		</value>			
 	  </block> 
 	  <block type="PN532_read">			
-	  </block>  	  
+	  </block> 	  
 	</category>	
 	
+	<category id="france12" name="adxl345">
+	  <block type="adxl345_getdata">			
+	  </block> 	
+	  <block type="adxl345_get">			
+	  </block>   	  
+	</category>	
+	
+	<category id="france12" name="gy30">
+	  <block type="gy30_getdata">			
+	  </block> 	  
+	</category>	
+
 	 <sep id="category_sep"></sep>	
 	 
     <category id="france3" name="spreadsheet">
@@ -10218,10 +10297,27 @@
 			<field name="TEXT">rdec-key-123-45678-011121314</field>
 		  </block>
 		</value>
-	  </block>
-	  <block type="fu_taiwan_weather_get">
-	  </block>	  
-    </category>		
+	  </block>  
+    </category>
+	<category id="france24" name="openai_text">
+	  <block type="openai_text_request">
+		<value name="token">
+		  <block type="text">
+			<field name="TEXT"></field>
+		  </block>
+		</value>
+		<value name="tokens">
+		  <block type="math_number">
+			<field name="NUM">256</field>
+		  </block>
+		</value>
+		<value name="words">
+		  <block type="text">
+			<field name="TEXT"></field>
+		  </block>
+		</value>
+	  </block> 	  
+    </category>	
 	<sep id="category_sep"></sep>
 	<category id="france7" name="others">
 	  <block type="loop_asynchronous">

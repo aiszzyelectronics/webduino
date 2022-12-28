@@ -1,3 +1,404 @@
+Blockly.Blocks['esp32_blekeyboard'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_SHOW"])	
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_INITIAL_SHOW"]);
+    this.appendValueInput("blename")
+        .setCheck("String")
+		.setAlign(Blockly.ALIGN_RIGHT)		
+		.appendField(Blockly.Msg.ESP32_BLUETOOTH_NAME_SHOW);
+    this.setInputsInline(true);
+	this.setPreviousStatement(!0);
+	this.setNextStatement(!0);
+    this.setColour(110);
+  }
+};
+
+Blockly.Blocks['esp32_blekeyboard_press'] = {
+  init: function() {
+	this.appendDummyInput()
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_SHOW"])	
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_PRESS_SHOW"]);		
+    this.appendValueInput("keycode1")
+        .setCheck("Number")
+		.setAlign(Blockly.ALIGN_RIGHT)		
+		.appendField(Blockly.Msg["ESP32_BLEKEYBOARD_KEYCODE_SHOW"]+"1");
+    this.appendValueInput("keycode2")
+        .setCheck("Number")
+		.setAlign(Blockly.ALIGN_RIGHT)		
+		.appendField(Blockly.Msg["ESP32_BLEKEYBOARD_KEYCODE_SHOW"]+"2");	
+    this.appendValueInput("keycode3")
+        .setCheck("Number")
+		.setAlign(Blockly.ALIGN_RIGHT)		
+		.appendField(Blockly.Msg["ESP32_BLEKEYBOARD_KEYCODE_SHOW"]+"3");	
+    this.appendValueInput("presstime")
+        .setCheck("Number")
+		.setAlign(Blockly.ALIGN_RIGHT)		
+		.appendField(Blockly.Msg["ESP32_BLEKEYBOARD_PRESSTIME_SHOW"]);			
+	this.setInputsInline(true);
+	this.setPreviousStatement(!0);
+	this.setNextStatement(!0);
+	this.setColour(110);
+  }
+};
+
+Blockly.Blocks['esp32_blekeyboard_print'] = {
+  init: function() {
+	this.appendDummyInput()
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_SHOW"])	
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_PRINT_SHOW"]);		
+    this.appendValueInput("characters")
+        .setCheck("String")
+		.setAlign(Blockly.ALIGN_RIGHT)		
+		.appendField(Blockly.Msg["ESP32_BLEKEYBOARD_CHARACTERS_SHOW"]);			
+	this.setInputsInline(true);
+	this.setPreviousStatement(!0);
+	this.setNextStatement(!0);
+	this.setColour(110);
+  }
+};
+
+Blockly.Blocks['esp32_blekeyboard_write'] = {
+  init: function() {
+	this.appendDummyInput()
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_SHOW"])	
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_WRITE_SHOW"]);		
+    this.appendValueInput("keycode")
+        .setCheck("Number")
+		.setAlign(Blockly.ALIGN_RIGHT)		
+		.appendField(Blockly.Msg["ESP32_BLEKEYBOARD_KEYCODE_SHOW"]);	
+	this.setInputsInline(true);
+	this.setPreviousStatement(!0);
+	this.setNextStatement(!0);
+	this.setColour(110);
+  }
+};
+
+Blockly.Blocks['esp32_blekeyboard_keycode'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+			["space","32"],
+			["!","33"],
+			["\"","34"],
+			["#","35"],
+			["$","36"],
+			["%","37"],
+			["&","38"],
+			["'","39"],
+			["(","40"],
+			[")","41"],
+			["*","42"],
+			["+","43"],
+			[",","44"],
+			["-","45"],
+			[".","46"],
+			["/","47"],
+			["0","48"],
+			["1","49"],
+			["2","50"],
+			["3","51"],
+			["4","52"],
+			["5","53"],
+			["6","54"],
+			["7","55"],
+			["8","56"],
+			["9","57"],
+			[":","58"],
+			[";","59"],
+			["<","60"],
+			["=","61"],
+			[">","62"],
+			["?","63"],
+			["@","64"],
+			["A","65"],
+			["B","66"],
+			["C","67"],
+			["D","68"],
+			["E","69"],
+			["F","70"],
+			["G","71"],
+			["H","72"],
+			["I","73"],
+			["J","74"],
+			["K","75"],
+			["L","76"],
+			["M","77"],
+			["N","78"],
+			["O","79"],
+			["P","80"],
+			["Q","81"],
+			["R","82"],
+			["S","83"],
+			["T","84"],
+			["U","85"],
+			["V","86"],
+			["W","87"],
+			["X","88"],
+			["Y","89"],
+			["Z","90"],
+			["[","91"],
+			["\\","92"],
+			["]","93"],
+			["^","94"],
+			["_","95"],
+			["`","96"],
+			["a","97"],
+			["b","98"],
+			["c","99"],
+			["d","100"],
+			["e","101"],
+			["f","102"],
+			["g","103"],
+			["h","104"],
+			["i","105"],
+			["j","106"],
+			["k","107"],
+			["l","108"],
+			["m","109"],
+			["n","110"],
+			["o","111"],
+			["p","112"],
+			["q","113"],
+			["r","114"],
+			["s","115"],
+			["t","116"],
+			["u","117"],
+			["v","118"],
+			["w","119"],
+			["x","120"],
+			["y","121"],
+			["z","122"],
+			["{","123"],
+			["|","124"],
+			["}","125"],
+			["~","126"],
+			["KEY_LEFT_CTRL","128"],
+			["KEY_LEFT_SHIFT","129"],
+			["KEY_LEFT_ALT","130"],
+			["KEY_LEFT_GUI","131"],
+			["KEY_RIGHT_CTRL","132"],
+			["KEY_RIGHT_SHIFT","133"],
+			["KEY_RIGHT_ALT","134"],
+			["KEY_RIGHT_GUI","135"],
+			["KEY_UP_ARROW","218"],
+			["KEY_DOWN_ARROW","217"],
+			["KEY_LEFT_ARROW","216"],
+			["KEY_RIGHT_ARROW","215"],
+			["KEY_BACKSPACE","178"],
+			["KEY_TAB","179"],
+			["KEY_RETURN","176"],
+			["KEY_ESC","177"],
+			["KEY_INSERT","209"],
+			["KEY_DELETE","212"],
+			["KEY_PAGE_UP","211"],
+			["KEY_PAGE_DOWN","214"],
+			["KEY_HOME","210"],
+			["KEY_END","213"],
+			["KEY_CAPS_LOCK","193"],
+			["KEY_F1","194"],
+			["KEY_F2","195"],
+			["KEY_F3","196"],
+			["KEY_F4","197"],
+			["KEY_F5","198"],
+			["KEY_F6","199"],
+			["KEY_F7","200"],
+			["KEY_F8","201"],
+			["KEY_F9","202"],
+			["KEY_F10","203"],
+			["KEY_F11","204"],
+			["KEY_F12","205"]			
+		]), "keycode");
+	this.appendDummyInput()
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_ASCII_SHOW"]);		
+	this.setInputsInline(true);
+	this.setOutput(true, null); 
+    this.setColour(110);
+  }
+};
+
+Blockly.Blocks['esp32_blekeyboard_chartoascii'] = {
+  init: function() {
+	this.appendDummyInput()
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_CHARACTER_SHOW"]);
+	this.appendValueInput("character")
+		.setCheck("String")
+		.setAlign(Blockly.ALIGN_RIGHT);
+	this.appendDummyInput()
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_TRANSFER_ASCII_SHOW"]);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+			[Blockly.Msg["ESP32_BLEKEYBOARD_INTEGER_SHOW"],"integer"],		
+			[Blockly.Msg["ESP32_BLEKEYBOARD_STRING_SHOW"],"string"]		
+		]), "type");		
+	this.setInputsInline(true);
+	this.setOutput(true, null); 
+    this.setColour(110);
+  }
+};
+
+Blockly.Blocks['gy30_getdata'] = {
+  init: function() {
+	this.appendDummyInput()
+		.appendField(Blockly.Msg["GY30_GETDATA_SHOW"]);
+	this.setInputsInline(true);
+	this.setOutput(true, null); 
+    this.setColour(Blockly.Msg["HUE_22"]);
+  }
+};
+
+Blockly.Blocks['openai_text_request'] = {
+  init: function() {
+  this.appendDummyInput()
+	  .appendField(Blockly.Msg.OPENAI_TEXT_SHOW);
+  this.appendValueInput("token")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.OPENAI_TEXT_TOKEN_SHOW); 	  
+  this.appendValueInput("tokens")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.OPENAI_TEXT_TOKENS_SHOW);
+  this.appendValueInput("words")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.OPENAI_TEXT_REQUEST_SHOW);	  
+  this.setInputsInline(true);
+  this.setOutput(true, null); 
+  this.setColour(250);
+  }
+};
+
+Blockly.Blocks['adxl345_getdata'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg["ADXL345"]);
+	this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT) 
+		.appendField(Blockly.Msg["ADXL345_GETDATA"])
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(Blockly.Msg["HUE_12"]);
+  }
+};
+
+Blockly.Blocks['adxl345_get'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg["ADXL345"]);	  
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+			["x","x"],		
+			["y","y"],
+			["z","z"]		
+		]), "acceleration");
+	this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT) 
+		.appendField(Blockly.Msg["ADXL345_GET"])
+	this.setInputsInline(true);
+	this.setOutput(true, null); 
+    this.setColour(Blockly.Msg["HUE_12"]);
+  }
+};
+
+Blockly.Blocks['fu_servo_initial'] = {
+  init: function() {
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg["FU_SERVO"]);	
+    this.appendValueInput("pin")
+        .setCheck("Number")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg["FU_SERVO_PIN"]);		
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT) 
+		.appendField(Blockly.Msg["FU_SERVO_PULSEWIDTH"])
+        .appendField(new Blockly.FieldDropdown([
+			[Blockly.Msg["FU_SERVO_DEFAULT"],""],		
+			[Blockly.Msg["FU_SERVO_CUSTOM"],"custom"]		
+		], this.validate), "custom");
+	this.appendValueInput("min","min")
+		.appendField(Blockly.Msg["FU_SERVO_MIN_PULSEWIDTH"])
+		.setCheck("Number");
+	this.appendValueInput("max","max")
+		.appendField(Blockly.Msg["FU_SERVO_MAX_PULSEWIDTH"])
+		.setCheck("Number");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT) 
+		.appendField(Blockly.Msg["FU_SERVO_INDEX"])
+        .appendField(new Blockly.FieldDropdown([
+			["0","0"],		
+			["1","1"],
+			["2","2"],		
+			["3","3"],
+			["4","4"],		
+			["5","5"],
+			["6","6"],		
+			["7","7"],
+			["8","8"],		
+			["9","9"],
+			["10","10"],		
+			["11","11"],
+			["12","12"],
+			["13","13"],		
+			["14","14"],
+			["15","15"]				
+		]), "index");			
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(255);
+  },
+	validate: function(newValue) {
+		const block = this.sourceBlock_;
+		if (newValue=="") {
+			block.getInput("min").setVisible(false);
+			block.getInput("max").setVisible(false);	
+		} else {
+			block.getInput("min").setVisible(true);
+			block.getInput("max").setVisible(true);	
+		}
+  }
+};
+
+Blockly.Blocks['fu_servo_angle'] = {
+  init: function() {
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg["FU_SERVO"]);		
+    this.appendValueInput("angle")
+        .setCheck("Number")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg["FU_SERVO_ANGLE"]);
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT) 
+		.appendField(Blockly.Msg["FU_SERVO_INDEX"])
+        .appendField(new Blockly.FieldDropdown([
+			["0","0"],		
+			["1","1"],
+			["2","2"],		
+			["3","3"],
+			["4","4"],		
+			["5","5"],
+			["6","6"],		
+			["7","7"],
+			["8","8"],		
+			["9","9"],
+			["10","10"],		
+			["11","11"],
+			["12","12"],
+			["13","13"],		
+			["14","14"],
+			["15","15"]		
+		]), "index");		
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(255);
+  }
+};
+
 Blockly.Blocks['PN532_initial'] = {
   init: function() {
 	this.appendDummyInput()
@@ -5273,10 +5674,14 @@ Blockly.Blocks['uart_initial'] = {
 		.setAlign(Blockly.ALIGN_RIGHT)	
 		.appendField(new Blockly.FieldDropdown([
 			[Blockly.Msg["UART_READ_ALL_SHOW"],"all"],
-			[Blockly.Msg["UART_READ_STRING_SHOW"],"string"],			
-			[Blockly.Msg["UART_READ_ROW_SHOW"],"row"],
-			[Blockly.Msg["UART_READ_CHAR_SHOW"],"char"]
-		]), "read");
+			[Blockly.Msg["UART_READ_STRING_SHOW"],"string"],
+			[Blockly.Msg["UART_READ_CHAR_SHOW"],"char"],			
+			[Blockly.Msg["UART_READ_NEWLINE_SHOW"],"newline"],
+			[Blockly.Msg["UART_READ_RETURN_SHOW"],"return"],			
+			[Blockly.Msg["UART_READ_CUSTOM_SHOW"],"custom"]			
+		], this.validate1), "read");
+    this.appendValueInput("custom","custom")
+        .setCheck("String");		
 	this.appendDummyInput()
         .appendField(Blockly.Msg.UART_AFTER_READ_SHOW);			
     this.appendStatementInput("statement")
@@ -5295,6 +5700,15 @@ Blockly.Blocks['uart_initial'] = {
 	 else {
 		 block.getInput("rx").setVisible(true);
 		 block.getInput("tx").setVisible(true);		 
+	 } 
+  },
+  validate1: function(newValue) {
+	 const block = this.sourceBlock_;
+	 if (newValue=="custom") {
+		 block.getInput("custom").setVisible(true);		 
+	 }
+	 else {
+		 block.getInput("custom").setVisible(false);	 
 	 } 
   }
 };
@@ -5644,7 +6058,7 @@ Blockly.Blocks['fu_servo_esp'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(155);
+    this.setColour(190);
     
     
   }
@@ -7837,7 +8251,10 @@ Blockly.Blocks['fu_oled_drawFont'] = {
     this.setColour(220);
 	
 	this.setHelpUrl("https://docs.microsoft.com/en-us/typography/font-list/");
-  },onchange: function(event) {
+  }
+  /*
+  ,onchange: function(event) {
+	  if (this.getInputTargetBlock("str")) {
 		var str = Blockly.Arduino.blockToCode(this.getInputTargetBlock("str"))[0];
 		if ((str.indexOf('"')==0)&&(str.lastIndexOf('"')==str.length-1))
 		str = str.substring(1,str.length-1);
@@ -7847,7 +8264,9 @@ Blockly.Blocks['fu_oled_drawFont'] = {
 				this.getInputTargetBlock("str").getField("TEXT").setValue("");			
 			this.getField("str").isDirty_=true;
 		}
-	} 
+	  }
+	}
+	*/	
 };
 
 Blockly.Blocks['fu_oled_drawCustomFont'] = {
@@ -7894,7 +8313,10 @@ Blockly.Blocks['fu_oled_drawCustomFont'] = {
     this.setNextStatement(true, null);
     this.setColour(220);
 	this.setHelpUrl("https://docs.microsoft.com/en-us/typography/font-list/");
-  },onchange: function(event) {
+  }
+  /*
+  ,onchange: function(event) {
+	  if (this.getInputTargetBlock("str")) {
 		var str = Blockly.Arduino.blockToCode(this.getInputTargetBlock("str"))[0];
 		if ((str.indexOf('"')==0)&&(str.lastIndexOf('"')==str.length-1))
 		str = str.substring(1,str.length-1);
@@ -7904,7 +8326,9 @@ Blockly.Blocks['fu_oled_drawCustomFont'] = {
 				this.getInputTargetBlock("str").getField("TEXT").setValue("");
 			this.getField("str").isDirty_=true;
 		}
+	  }
 	}  
+	*/
 };
 
 Blockly.Blocks['fu_oled_setCursor'] = {
@@ -11598,10 +12022,10 @@ Blockly.Blocks['esp32_myfirmata_bluetooth'] = {
 		.setAlign(Blockly.ALIGN_RIGHT)		
 		.appendField(Blockly.Msg.ESP32_BLUETOOTH_NAME_SHOW);		
     this.appendDummyInput()
-        .appendField(Blockly.Msg.SERVERMODULE_EXECUTE_SHOW);
+        .appendField(Blockly.Msg["ESP32_BLEKEYBOARD_AFTER_READ_SHOW"]);
     this.appendStatementInput("ExecuteCommand")
         .setCheck(null);
-    this.setInputsInline(false);
+    this.setInputsInline(true);
 	this.setPreviousStatement(!0);
 	this.setNextStatement(!0);
     this.setColour(190);
@@ -17423,11 +17847,79 @@ Blockly.Blocks.esp32_buzzer={
 				["G# 4 [415]","415"],
 				["A 4 [440]","440"],
 				["A# 4 [466]","466"],
-				["B 4 [494]","494"]
+				["B 4 [494]","494"],
+				["C 5 [523]","523"],
+				["C# 5 [554]","554"],
+				["D 5 [587]","587"],
+				["D# 5 [622]","622"],
+				["E 5 [659]","659"],
+				["F 5 [698]","698"],
+				["F# 5 [740]","740"],
+				["G 5 [784]","784"],
+				["G# 5 [831]","831"],
+				["A 5 [880]","880"],
+				["A# 5 [932]","932"],
+				["B 5 [988]","988"],			
+				["C 6 [1047]","1047"],
+				["C# 6 [1109]","1109"],
+				["D 6 [1175]","1175"],
+				["D# 6 [1245]","1245"],
+				["E 6 [1319]","1319"],
+				["F 6 [1397]","1397"],
+				["F# 6 [1480]","1480"],
+				["G 6 [1568]","1568"],
+				["G# 6 [1661]","1661"],
+				["A 6 [1760]","1760"],
+				["A# 6 [1864]","1864"],
+				["B 6 [1975]","1975"],
+				["C 7 [2093]","2093"],
+				["C# 7 [2218]","2218"],
+				["D 7 [2349]","2349"],
+				["D# 7 [2489]","2489"],
+				["E 7 [2637]","2637"],
+				["F 7 [2794]","2794"],
+				["F# 7 [2960]","2960"],
+				["G 7 [3136]","3136"],
+				["G# 7 [3322]","3322"],
+				["A 7 [3520]","3520"],
+				["A# 7 [3729]","3729"],
+				["B 7 [3951]","3951"],
+				["C 8 [4186]","4186"],
+				["C# 8 [4435]","4435"],
+				["D 8 [4699]","4699"],
+				["D# 8 [4978]","4978"],
+				["E 8 [5274]","5274"],
+				["F 8 [5588]","5588"],
+				["F# 8 [5920]","5920"],
+				["G 8 [6272]","6272"],
+				["G# 8 [6645]","6645"],
+				["A 8 [7040]","7040"],
+				["A# 8 [7459]","7459"],
+				["B 8 [7902]","7902"]				
 			]),"frequency");
 		this.appendValueInput("delaytime")
 			.setCheck(null)
-			.appendField(Blockly.Msg.ESP32_BUZZER_DELAYTIME);			
+			.appendField(Blockly.Msg.ESP32_BUZZER_DELAYTIME);
+	  this.appendDummyInput()
+		  .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_INDEX)
+		  .appendField(new Blockly.FieldDropdown([
+				["0","0"],		
+				["1","1"],
+				["2","2"],		
+				["3","3"],
+				["4","4"],		
+				["5","5"],
+				["6","6"],		
+				["7","7"],
+				["8","8"],		
+				["9","9"],
+				["10","10"],		
+				["11","11"],
+				["12","12"],
+				["13","13"],		
+				["14","14"],
+				["15","15"]
+		  ]),"index");				
 		this.setInputsInline(true);
 		this.setPreviousStatement(true,null);
 		this.setNextStatement(true,null);
@@ -17471,7 +17963,27 @@ Blockly.Blocks.esp32_buzzer2={
 			]),"frequency");
 		this.appendValueInput("delaytime")
 			.setCheck(null)
-			.appendField(Blockly.Msg.ESP32_BUZZER_DELAYTIME);			
+			.appendField(Blockly.Msg.ESP32_BUZZER_DELAYTIME);
+	  this.appendDummyInput()
+		  .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_INDEX)
+		  .appendField(new Blockly.FieldDropdown([
+				["0","0"],		
+				["1","1"],
+				["2","2"],		
+				["3","3"],
+				["4","4"],		
+				["5","5"],
+				["6","6"],		
+				["7","7"],
+				["8","8"],		
+				["9","9"],
+				["10","10"],		
+				["11","11"],
+				["12","12"],
+				["13","13"],		
+				["14","14"],
+				["15","15"]
+		  ]),"index");				
 		this.setInputsInline(true);
 		this.setPreviousStatement(true,null);
 		this.setNextStatement(true,null);
@@ -17515,7 +18027,27 @@ Blockly.Blocks.esp32_buzzer3={
 			]),"frequency");
 		this.appendValueInput("delaytime")
 			.setCheck(null)
-			.appendField(Blockly.Msg.ESP32_BUZZER_DELAYTIME);			
+			.appendField(Blockly.Msg.ESP32_BUZZER_DELAYTIME);
+	  this.appendDummyInput()
+		  .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_INDEX)
+		  .appendField(new Blockly.FieldDropdown([
+				["0","0"],		
+				["1","1"],
+				["2","2"],		
+				["3","3"],
+				["4","4"],		
+				["5","5"],
+				["6","6"],		
+				["7","7"],
+				["8","8"],		
+				["9","9"],
+				["10","10"],		
+				["11","11"],
+				["12","12"],
+				["13","13"],		
+				["14","14"],
+				["15","15"]
+		  ]),"index");				
 		this.setInputsInline(true);
 		this.setPreviousStatement(true,null);
 		this.setNextStatement(true,null);
@@ -17534,7 +18066,27 @@ Blockly.Blocks.esp32_buzzer1={
 			.appendField(Blockly.Msg.ESP32_BUZZER_FREQUENCY);
 		this.appendValueInput("delaytime")
 			.setCheck(null)
-			.appendField(Blockly.Msg.ESP32_BUZZER_DELAYTIME);			
+			.appendField(Blockly.Msg.ESP32_BUZZER_DELAYTIME);
+	  this.appendDummyInput()
+		  .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_INDEX)
+		  .appendField(new Blockly.FieldDropdown([
+				["0","0"],		
+				["1","1"],
+				["2","2"],		
+				["3","3"],
+				["4","4"],		
+				["5","5"],
+				["6","6"],		
+				["7","7"],
+				["8","8"],		
+				["9","9"],
+				["10","10"],		
+				["11","11"],
+				["12","12"],
+				["13","13"],		
+				["14","14"],
+				["15","15"]
+		  ]),"index");				
 		this.setInputsInline(true);
 		this.setPreviousStatement(true,null);
 		this.setNextStatement(true,null);
@@ -17571,7 +18123,55 @@ Blockly.Blocks.esp32_buzzer_tone1={
 				["G# 4 [415]","415"],
 				["A 4 [440]","440"],
 				["A# 4 [466]","466"],
-				["B 4 [494]","494"]
+				["B 4 [494]","494"],
+				["C 5 [523]","523"],
+				["C# 5 [554]","554"],
+				["D 5 [587]","587"],
+				["D# 5 [622]","622"],
+				["E 5 [659]","659"],
+				["F 5 [698]","698"],
+				["F# 5 [740]","740"],
+				["G 5 [784]","784"],
+				["G# 5 [831]","831"],
+				["A 5 [880]","880"],
+				["A# 5 [932]","932"],
+				["B 5 [988]","988"],			
+				["C 6 [1047]","1047"],
+				["C# 6 [1109]","1109"],
+				["D 6 [1175]","1175"],
+				["D# 6 [1245]","1245"],
+				["E 6 [1319]","1319"],
+				["F 6 [1397]","1397"],
+				["F# 6 [1480]","1480"],
+				["G 6 [1568]","1568"],
+				["G# 6 [1661]","1661"],
+				["A 6 [1760]","1760"],
+				["A# 6 [1864]","1864"],
+				["B 6 [1975]","1975"],
+				["C 7 [2093]","2093"],
+				["C# 7 [2218]","2218"],
+				["D 7 [2349]","2349"],
+				["D# 7 [2489]","2489"],
+				["E 7 [2637]","2637"],
+				["F 7 [2794]","2794"],
+				["F# 7 [2960]","2960"],
+				["G 7 [3136]","3136"],
+				["G# 7 [3322]","3322"],
+				["A 7 [3520]","3520"],
+				["A# 7 [3729]","3729"],
+				["B 7 [3951]","3951"],
+				["C 8 [4186]","4186"],
+				["C# 8 [4435]","4435"],
+				["D 8 [4699]","4699"],
+				["D# 8 [4978]","4978"],
+				["E 8 [5274]","5274"],
+				["F 8 [5588]","5588"],
+				["F# 8 [5920]","5920"],
+				["G 8 [6272]","6272"],
+				["G# 8 [6645]","6645"],
+				["A 8 [7040]","7040"],
+				["A# 8 [7459]","7459"],
+				["B 8 [7902]","7902"]				
 			]),"frequency");
 		this.setInputsInline(true);
 		this.setOutput(true);
@@ -18661,21 +19261,33 @@ Blockly.Blocks.webbit_mooncar_sonar_pin={init:function(){
   this.appendDummyInput()
       .appendField(Blockly.Msg.FRANCEFU_SONAR);
   this.appendDummyInput()
-      .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_INDEX)
-      .appendField(new Blockly.FieldDropdown([
-		  ["0","0"],
-		  ["1","1"],
-		  ["2","2"],
-		  ["3","3"]
-	  ]),"index");	
-  this.appendDummyInput()
       .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_PIN);	  
   this.appendValueInput("TRIG")
       .setCheck("Number")
 	  .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_PIN_TRIG);
   this.appendValueInput("ECHO")
       .setCheck("Number")
-	  .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_PIN_ECHO);  
+	  .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_PIN_ECHO); 
+  this.appendDummyInput()
+      .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_INDEX)
+      .appendField(new Blockly.FieldDropdown([
+			["0","0"],		
+			["1","1"],
+			["2","2"],		
+			["3","3"],
+			["4","4"],		
+			["5","5"],
+			["6","6"],		
+			["7","7"],
+			["8","8"],		
+			["9","9"],
+			["10","10"],		
+			["11","11"],
+			["12","12"],
+			["13","13"],		
+			["14","14"],
+			["15","15"]
+	  ]),"index");		  
   this.setInputsInline(!0);
   this.setPreviousStatement(!0,null);
   this.setNextStatement(!0,null);
@@ -18689,10 +19301,22 @@ Blockly.Blocks.webbit_mooncar_sonar={
 	  this.appendDummyInput()
 		  .appendField(Blockly.Msg.FRANCEFU_MOONCAR_SONAR_INDEX)
 		  .appendField(new Blockly.FieldDropdown([
-			  ["0","0"],
-			  ["1","1"],
-			  ["2","2"],
-			  ["3","3"]
+			["0","0"],		
+			["1","1"],
+			["2","2"],		
+			["3","3"],
+			["4","4"],		
+			["5","5"],
+			["6","6"],		
+			["7","7"],
+			["8","8"],		
+			["9","9"],
+			["10","10"],		
+			["11","11"],
+			["12","12"],
+			["13","13"],		
+			["14","14"],
+			["15","15"]
 		  ]),"index");	  
 	  this.setInputsInline(!0);
 	  this.setOutput(!0,null);
@@ -21470,3 +22094,5 @@ Blockly.Blocks['faceapirecognize_canvas_get'] = {
   this.setColour(Blockly.Msg["HUE_18"]);
   }
 };
+
+if (typeof topCheck !== "undefined") topCheck = false;

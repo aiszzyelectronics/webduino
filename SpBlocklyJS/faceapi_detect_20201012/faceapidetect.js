@@ -20,6 +20,14 @@
 		}
 		return "";
 	}
+	
+	function faceapidetect_number() {
+		var result = document.getElementById("result_faceapidetect").innerHTML.split("<br>");
+		if (result[0]=="")
+			return 0;
+		else
+			return result.length;
+	}	
 
 	function faceapidetect_video(input_frame, input_result, input_opacity) {
 		document.getElementById('frame_faceapidetect').value = input_frame;
@@ -111,6 +119,7 @@
 	}
 	
 	window.faceapidetect_face = faceapidetect_face;
+	window.faceapidetect_number = faceapidetect_number;
 	window.faceapidetect_video = faceapidetect_video;
 	window.faceapidetect_video_position = faceapidetect_video_position;
 	window.faceapidetect_state = faceapidetect_state;
